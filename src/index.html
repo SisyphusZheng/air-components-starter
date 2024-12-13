@@ -24,21 +24,32 @@
     <script nomodule src="./build/stencil-component-example.js"></script>
   </head>
   <body>
-    <air-card
-      title="Awesome Card"
-      description="This is a description of the awesome card content. It can be as long as necessary."
-      imageUrl="https://via.placeholder.com/300"
-      showButton="true">
-      <!-- 自定义按钮插入到 air-card 的 slot 中 -->
-      <air-button
-        slot="button"
-        content="Click Me"
-        type="primary"
-        size="medium"
-        icon="💥"
-        round="true">
-      </air-button>
+    
+    <air-topbar>
+      <air-link-button
+        href="https://github.com/SisyphusZheng/AirComponents"
+        icon="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/github.svg"
+        label="Documents"
+        textColor="text-white-500"
+      ></air-link-button>
+      <air-link-button
+        href="https://github.com/SisyphusZheng/air-components-starter"
+        icon="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/github.svg"
+        label="Starter"
+        textColor="text-white-500"
+      ></air-link-button>
+    </air-topbar>
 
-    </air-card>
+    <hero-section></hero-section>
+    
+    <air-foot-nav>
+      <span slot="title">My Custom Footer</span>
+      <span slot="description">Custom description for my footer component.</span>
+      <span slot="extra-description">Additional description goes here.</span>
+      <a slot="external-link" href="https://example.com">Visit My Website</a>
+      <span slot="links-title">Important Links</span>
+    </air-foot-nav>
+    
+  </main>
   </body>
 </html>

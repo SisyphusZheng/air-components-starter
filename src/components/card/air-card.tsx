@@ -6,47 +6,56 @@ import { Component, h, Prop } from "@stencil/core";
   shadow: true,
 })
 export class AirCard {
-  // 定义组件属性（Props），用于接收动态内容
   @Prop() title: string; // 卡片标题
   @Prop() description: string; // 卡片描述
   @Prop() imageUrl: string; // 卡片图片 URL
-  @Prop() tags: string[] = []; // 标签列表，默认为空数组
+  @Prop() tags: string[] = []; // 标签列表
   @Prop() showButton: boolean = true; // 是否显示按钮，默认为显示
 
   render() {
     return (
-      <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white p-4">
-        {/* 动态渲染图片 */}
-        <img
-          class="w-full"
-          src={this.imageUrl || "https://via.placeholder.com/300"}
-          alt="Card Image"
-        />
-
-        <div class="px-6 py-4">
-          {/* 动态渲染标题 */}
-          <div class="font-bold text-xl mb-2">{this.title || "Card Title"}</div>
-
-          {/* 动态渲染描述 */}
-          <p class="text-gray-700 text-base">
-            {this.description || "This is a description of the card content."}
-          </p>
-        </div>
-
-        <div class="px-6 pt-4 pb-2">
-          {/* 动态渲染标签 */}
-          {this.tags.map((tag) => (
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-              {tag}
-            </span>
-          ))}
-        </div>
-
-        {this.showButton && (
-          <div class="px-6 pt-4 pb-2">
-            <slot name="button"></slot> {/* 使用 slot 来插入自定义按钮 */}
-          </div>
+      <div class="max-w-sm w-auto rounded-3xl overflow-hidden shadow-xl bg-white p-4 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+        {/* 图片部分 */}
+        {this.imageUrl && (
+          <img
+            class="w-full h-48 object-cover rounded-xl mb-4 transition-transform duration-300 hover:scale-110"
+            src={this.imageUrl || "https://via.placeholder.com/300"}
+            alt="Card Image"
+          />
         )}
+  
+        <div class="px-6 py-4">
+          {/* 卡片标题 */}
+          <div class="font-semibold text-2xl text-gray-900 mb-2">{this.title || "Card Title"}</div>
+  
+          {/* 卡片描述 */}
+          <p class="text-gray-600 text-base mb-4">{this.description || "This is a description of the card content."}</p>
+  
+          {/* 标签部分 */}
+          <div class="flex flex-wrap space-x-2 mb-4">
+            {this.tags.map((tag) => (
+              <span class="bg-gray-200 text-gray-700 text-xs font-semibold rounded-full px-3 py-1 mb-2">
+                {tag}
+              </span>
+            ))}
+          </div>
+  
+          {/* 按钮部分 */}
+          {this.showButton && (
+            <div>
+              <slot name="button">
+                <button class="w-full py-2 px-4 bg-gradient-to-r from-blue-500 to-teal-500 text-white font-semibold rounded-lg hover:bg-gradient-to-l transition-colors duration-300">
+                  Learn More
+                </button>
+              </slot>
+            </div>
+          )}
+  
+          {/* 额外内容部分 */}
+          <div class="mt-4">
+            <slot name="extra-content"></slot>
+          </div>
+        </div>
       </div>
     );
   }

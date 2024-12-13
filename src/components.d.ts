@@ -33,17 +33,27 @@ export namespace Components {
         "tags": string[];
         "title": string;
     }
+    interface AirFootNav {
+    }
+    interface AirLinkButton {
+        "href": string;
+        "icon": string;
+        "label": string;
+        "textColor": string;
+    }
     interface AirRow {
     }
-    interface DemoSection {
-    }
-    interface FooterNav {
+    interface AirTopbar {
+        "defaultBgColor": string;
+        "gradientBgColor": string;
+        "scrollBgColor": string;
+        "scrolledTextColor": string;
+        "shadowEffect": boolean;
+        "textColor": string;
+        "titleText": string;
+        "titleTextColor": string;
     }
     interface HeroSection {
-    }
-    interface MainApp {
-    }
-    interface TopNavBar {
     }
 }
 declare global {
@@ -65,23 +75,29 @@ declare global {
         prototype: HTMLAirCardElement;
         new (): HTMLAirCardElement;
     };
+    interface HTMLAirFootNavElement extends Components.AirFootNav, HTMLStencilElement {
+    }
+    var HTMLAirFootNavElement: {
+        prototype: HTMLAirFootNavElement;
+        new (): HTMLAirFootNavElement;
+    };
+    interface HTMLAirLinkButtonElement extends Components.AirLinkButton, HTMLStencilElement {
+    }
+    var HTMLAirLinkButtonElement: {
+        prototype: HTMLAirLinkButtonElement;
+        new (): HTMLAirLinkButtonElement;
+    };
     interface HTMLAirRowElement extends Components.AirRow, HTMLStencilElement {
     }
     var HTMLAirRowElement: {
         prototype: HTMLAirRowElement;
         new (): HTMLAirRowElement;
     };
-    interface HTMLDemoSectionElement extends Components.DemoSection, HTMLStencilElement {
+    interface HTMLAirTopbarElement extends Components.AirTopbar, HTMLStencilElement {
     }
-    var HTMLDemoSectionElement: {
-        prototype: HTMLDemoSectionElement;
-        new (): HTMLDemoSectionElement;
-    };
-    interface HTMLFooterNavElement extends Components.FooterNav, HTMLStencilElement {
-    }
-    var HTMLFooterNavElement: {
-        prototype: HTMLFooterNavElement;
-        new (): HTMLFooterNavElement;
+    var HTMLAirTopbarElement: {
+        prototype: HTMLAirTopbarElement;
+        new (): HTMLAirTopbarElement;
     };
     interface HTMLHeroSectionElement extends Components.HeroSection, HTMLStencilElement {
     }
@@ -89,28 +105,15 @@ declare global {
         prototype: HTMLHeroSectionElement;
         new (): HTMLHeroSectionElement;
     };
-    interface HTMLMainAppElement extends Components.MainApp, HTMLStencilElement {
-    }
-    var HTMLMainAppElement: {
-        prototype: HTMLMainAppElement;
-        new (): HTMLMainAppElement;
-    };
-    interface HTMLTopNavBarElement extends Components.TopNavBar, HTMLStencilElement {
-    }
-    var HTMLTopNavBarElement: {
-        prototype: HTMLTopNavBarElement;
-        new (): HTMLTopNavBarElement;
-    };
     interface HTMLElementTagNameMap {
         "air-avatar": HTMLAirAvatarElement;
         "air-button": HTMLAirButtonElement;
         "air-card": HTMLAirCardElement;
+        "air-foot-nav": HTMLAirFootNavElement;
+        "air-link-button": HTMLAirLinkButtonElement;
         "air-row": HTMLAirRowElement;
-        "demo-section": HTMLDemoSectionElement;
-        "footer-nav": HTMLFooterNavElement;
+        "air-topbar": HTMLAirTopbarElement;
         "hero-section": HTMLHeroSectionElement;
-        "main-app": HTMLMainAppElement;
-        "top-nav-bar": HTMLTopNavBarElement;
     }
 }
 declare namespace LocalJSX {
@@ -141,28 +144,37 @@ declare namespace LocalJSX {
         "tags"?: string[];
         "title"?: string;
     }
+    interface AirFootNav {
+    }
+    interface AirLinkButton {
+        "href"?: string;
+        "icon"?: string;
+        "label"?: string;
+        "textColor"?: string;
+    }
     interface AirRow {
     }
-    interface DemoSection {
-    }
-    interface FooterNav {
+    interface AirTopbar {
+        "defaultBgColor"?: string;
+        "gradientBgColor"?: string;
+        "scrollBgColor"?: string;
+        "scrolledTextColor"?: string;
+        "shadowEffect"?: boolean;
+        "textColor"?: string;
+        "titleText"?: string;
+        "titleTextColor"?: string;
     }
     interface HeroSection {
-    }
-    interface MainApp {
-    }
-    interface TopNavBar {
     }
     interface IntrinsicElements {
         "air-avatar": AirAvatar;
         "air-button": AirButton;
         "air-card": AirCard;
+        "air-foot-nav": AirFootNav;
+        "air-link-button": AirLinkButton;
         "air-row": AirRow;
-        "demo-section": DemoSection;
-        "footer-nav": FooterNav;
+        "air-topbar": AirTopbar;
         "hero-section": HeroSection;
-        "main-app": MainApp;
-        "top-nav-bar": TopNavBar;
     }
 }
 export { LocalJSX as JSX };
@@ -172,12 +184,11 @@ declare module "@stencil/core" {
             "air-avatar": LocalJSX.AirAvatar & JSXBase.HTMLAttributes<HTMLAirAvatarElement>;
             "air-button": LocalJSX.AirButton & JSXBase.HTMLAttributes<HTMLAirButtonElement>;
             "air-card": LocalJSX.AirCard & JSXBase.HTMLAttributes<HTMLAirCardElement>;
+            "air-foot-nav": LocalJSX.AirFootNav & JSXBase.HTMLAttributes<HTMLAirFootNavElement>;
+            "air-link-button": LocalJSX.AirLinkButton & JSXBase.HTMLAttributes<HTMLAirLinkButtonElement>;
             "air-row": LocalJSX.AirRow & JSXBase.HTMLAttributes<HTMLAirRowElement>;
-            "demo-section": LocalJSX.DemoSection & JSXBase.HTMLAttributes<HTMLDemoSectionElement>;
-            "footer-nav": LocalJSX.FooterNav & JSXBase.HTMLAttributes<HTMLFooterNavElement>;
+            "air-topbar": LocalJSX.AirTopbar & JSXBase.HTMLAttributes<HTMLAirTopbarElement>;
             "hero-section": LocalJSX.HeroSection & JSXBase.HTMLAttributes<HTMLHeroSectionElement>;
-            "main-app": LocalJSX.MainApp & JSXBase.HTMLAttributes<HTMLMainAppElement>;
-            "top-nav-bar": LocalJSX.TopNavBar & JSXBase.HTMLAttributes<HTMLTopNavBarElement>;
         }
     }
 }

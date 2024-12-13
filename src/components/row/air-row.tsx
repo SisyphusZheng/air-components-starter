@@ -5,7 +5,7 @@ import { Component, Host, h } from "@stencil/core";
   styleUrl: "air-row.css",
   shadow: true,
 })
-export class SwcRow {
+export class AirRow {
   render() {
     return (
       <Host>
