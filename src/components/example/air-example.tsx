@@ -1,8 +1,8 @@
 import { Component, Host, h } from '@stencil/core';
 
 @Component({
-  tag: 'hero-section',
-  styleUrl: 'hero-section.css',
+  tag: 'air-example',
+  styleUrl: 'air-example.css',
   shadow: true,
 })
 export class HeroSection {
@@ -10,10 +10,32 @@ export class HeroSection {
   render() {
     return (
       <Host>
+            <air-topbar>
+      <air-link-button
+        href="https://github.com/SisyphusZheng/AirComponents"
+        icon="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/github.svg"
+        label="Documents"
+        textColor="text-white-500"
+      ></air-link-button>
+      <air-link-button
+        href="https://github.com/SisyphusZheng/air-components-starter"
+        icon="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/github.svg"
+        label="Starter"
+        textColor="text-white-500"
+      ></air-link-button>
+    </air-topbar>
+    
         <div class="grid min-h-screen overflow-hidden place-items-center">
           <div class="flex flex-col justify-between w-full max-w-6xl gap-4 p-4 mt-10 mb-48 text-black">
             <h1 class="flex flex-col gap-2 py-4 mb-2 font-extrabold text-center text-black">
-              <span class="mb-2 text-5xl lg:text-7xl">air-components</span>
+              {/* Centered the logo */}
+              <div class="flex justify-center items-center mb-2">
+                <img 
+                  src="assets/air-components-logo.svg" 
+                  alt="Air Components Logo" 
+                  class="w-20 lg:w-32"  // Adjust the width as needed
+                />
+              </div>
             </h1>
             <div class="flex flex-col items-center justify-center w-full space-y-10 lg:space-x-4 lg:space-y-0 lg:flex-row">
               <div class="flex items-center w-full max-w-md gap-2 p-5 font-mono text-xs bg-transparent border-2 rounded-md md:text-base sm:text-sm border-opacity-40 text-black">
@@ -44,6 +66,14 @@ export class HeroSection {
             </div>
           </div>
         </div>
+
+        <air-foot-nav>
+      <span slot="title">My Custom Footer</span>
+      <span slot="description">Custom description for my footer component.</span>
+      <span slot="extra-description">Additional description goes here.</span>
+      <a slot="external-link" href="https://example.com">Visit My Website</a>
+      <span slot="links-title">Important Links</span>
+    </air-foot-nav>
       </Host>
     );
   }

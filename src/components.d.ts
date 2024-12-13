@@ -33,6 +33,8 @@ export namespace Components {
         "tags": string[];
         "title": string;
     }
+    interface AirExample {
+    }
     interface AirFootNav {
     }
     interface AirLinkButton {
@@ -53,8 +55,6 @@ export namespace Components {
         "titleText": string;
         "titleTextColor": string;
     }
-    interface HeroSection {
-    }
 }
 declare global {
     interface HTMLAirAvatarElement extends Components.AirAvatar, HTMLStencilElement {
@@ -74,6 +74,12 @@ declare global {
     var HTMLAirCardElement: {
         prototype: HTMLAirCardElement;
         new (): HTMLAirCardElement;
+    };
+    interface HTMLAirExampleElement extends Components.AirExample, HTMLStencilElement {
+    }
+    var HTMLAirExampleElement: {
+        prototype: HTMLAirExampleElement;
+        new (): HTMLAirExampleElement;
     };
     interface HTMLAirFootNavElement extends Components.AirFootNav, HTMLStencilElement {
     }
@@ -99,21 +105,15 @@ declare global {
         prototype: HTMLAirTopbarElement;
         new (): HTMLAirTopbarElement;
     };
-    interface HTMLHeroSectionElement extends Components.HeroSection, HTMLStencilElement {
-    }
-    var HTMLHeroSectionElement: {
-        prototype: HTMLHeroSectionElement;
-        new (): HTMLHeroSectionElement;
-    };
     interface HTMLElementTagNameMap {
         "air-avatar": HTMLAirAvatarElement;
         "air-button": HTMLAirButtonElement;
         "air-card": HTMLAirCardElement;
+        "air-example": HTMLAirExampleElement;
         "air-foot-nav": HTMLAirFootNavElement;
         "air-link-button": HTMLAirLinkButtonElement;
         "air-row": HTMLAirRowElement;
         "air-topbar": HTMLAirTopbarElement;
-        "hero-section": HTMLHeroSectionElement;
     }
 }
 declare namespace LocalJSX {
@@ -144,6 +144,8 @@ declare namespace LocalJSX {
         "tags"?: string[];
         "title"?: string;
     }
+    interface AirExample {
+    }
     interface AirFootNav {
     }
     interface AirLinkButton {
@@ -164,17 +166,15 @@ declare namespace LocalJSX {
         "titleText"?: string;
         "titleTextColor"?: string;
     }
-    interface HeroSection {
-    }
     interface IntrinsicElements {
         "air-avatar": AirAvatar;
         "air-button": AirButton;
         "air-card": AirCard;
+        "air-example": AirExample;
         "air-foot-nav": AirFootNav;
         "air-link-button": AirLinkButton;
         "air-row": AirRow;
         "air-topbar": AirTopbar;
-        "hero-section": HeroSection;
     }
 }
 export { LocalJSX as JSX };
@@ -184,11 +184,11 @@ declare module "@stencil/core" {
             "air-avatar": LocalJSX.AirAvatar & JSXBase.HTMLAttributes<HTMLAirAvatarElement>;
             "air-button": LocalJSX.AirButton & JSXBase.HTMLAttributes<HTMLAirButtonElement>;
             "air-card": LocalJSX.AirCard & JSXBase.HTMLAttributes<HTMLAirCardElement>;
+            "air-example": LocalJSX.AirExample & JSXBase.HTMLAttributes<HTMLAirExampleElement>;
             "air-foot-nav": LocalJSX.AirFootNav & JSXBase.HTMLAttributes<HTMLAirFootNavElement>;
             "air-link-button": LocalJSX.AirLinkButton & JSXBase.HTMLAttributes<HTMLAirLinkButtonElement>;
             "air-row": LocalJSX.AirRow & JSXBase.HTMLAttributes<HTMLAirRowElement>;
             "air-topbar": LocalJSX.AirTopbar & JSXBase.HTMLAttributes<HTMLAirTopbarElement>;
-            "hero-section": LocalJSX.HeroSection & JSXBase.HTMLAttributes<HTMLHeroSectionElement>;
         }
     }
 }
