@@ -1,27 +1,35 @@
-# stencil-tailwind-plugin-example
 
-This repo is an example repo for showing the integration of the stencil-tailwind-plugin and StencilJS.
+# AirComponents-Starter
 
-## Getting started with Stencil Component Example
+Welcome to **AirComponents-Starter**! This is a lightweight and powerful starter template for building **Web Components** with **StencilJS** and **Tailwind CSS**, using **PNPM** as the package manager. It provides a smooth development experience with modern tooling and best practices. This project is designed to be **plug-and-play**, so you can start building your own components right away.
 
-Clone the repo, and install the dependencies:
-```shell
-cd stencil-component-starter
-npm install
-```
+## Key Features
 
-Start the stencil dev server:
-```shell
-npm start
-```
+- **StencilJS**: Build fast, reusable, and native web components.
+- **Tailwind CSS**: Utility-first CSS framework for highly customizable designs.
+- **PNPM**: Efficient package manager for faster installs and less disk space usage.
+- **Zero Configuration**: Out of the box support for developing and building web components.
+- **Responsive Components**: Ready-to-use responsive components using Tailwind's utility classes.
+- **Storybook**: Interactive UI playground for your components.
 
-If you would like to build the application:
-```shell
-npm run build
-```
+![Example Image](./src/assets/example.png/)
 
-# Example output screen
+## Project Setup
 
-As an example of what to expect
+This project is designed for easy setup with **StencilJS** and **Tailwind CSS**. You can start building your components right away without needing to configure anything!
 
-![example-output-cards](images/example-output.png)
+### Prerequisites
+
+Before you begin, ensure that you have the following installed:
+
+- **Node.js** (>= 14.x)
+- **PNPM** (you can install it globally with `npm install -g pnpm`)
+
+### Installation
+
+Clone this repository and install the dependencies using PNPM:
+
+```bash
+git clone https://github.com/SisyphusZheng/air-components-starter.git
+cd air-components-starter
+pnpm install
