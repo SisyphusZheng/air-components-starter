@@ -12,7 +12,7 @@ Welcome to **AirComponents-Starter**! This is a lightweight and powerful starter
 - **Responsive Components**: Ready-to-use responsive components using Tailwind's utility classes.
 - **Storybook**: Interactive UI playground for your components.
 
-![Example Image](./src/assets/example.png/)
+![Example Image](./src/assets/example.png)
 
 ## Project Setup
 
